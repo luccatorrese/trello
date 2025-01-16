@@ -3,15 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Mon tableau Trello</title>
+	<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de tâches</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="index.css" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
 	<link rel="icon" href="images/clipboard_120835.png" alt="Icône" />
 </head>
 
 <body>
     <!-- Présentation du site -->
+
+	<header>
+            <img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;" />
+            <nav>
+                <ul>
+                    <li>Menu principal</li>
+                    <li><a href="history.html">Histoire</a></li>
+                    <li><a href="data.html">Données</a></li>
+                </ul>
+            </nav>
+        </header>
+
     <h1>Bienvenue !</h1>
     <h2>Description</h2>
     <p>Je te souhaite la bienvenue sur mon tableau Trello ! Cette page Web de type interactive sert à structurer des tâches, et s'inspire directement du site <a href="https://www.trello.com">Trello</a>, qui permet de gérer des projets. L'ensemble des données de cette page Web sont traitées dans la base de données phpMyAdmin, appelée "trello". Dedans tu peux rajouter le travail à faire, les prochaines sorties en extérieur, etc...</p>
@@ -24,7 +42,7 @@
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "trello";
+		$dbname = "db_trello";
 		// Connexion à la base de données
 		$conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -32,6 +50,7 @@
 		if ($conn->connect_error) {
 			die("Connexion échouée: " . $conn->connect_error);
 		}
+
 
 		// Requête SQL pour sélectionner toutes les données de la table "groupe"
 		$sql = "SELECT * FROM groupes";
@@ -87,7 +106,7 @@ $conn->close();
 	<!-- Boîte de dialogue bonus -->
 
 	<dialog>
-		<p>Ceci est une boîte de dialogue. Nous n'avons pas pu offrir à nos utilisateurs la fonctionnalité d'ajout et de modification de données...</p>
+		<p>A suivre...</p>
 		<form method="dialog">
 		<button>OK</button>
 		</form>
@@ -119,7 +138,8 @@ $conn->close();
 	<footer>
         <nav>
             <ul>
-                <li>© 2024 IUT de Corse. 20250 Corte.</li>
+				<li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;" /></li>
+                <li>© 2025 Université de Corse. Tous droits réservés.</li>
             </ul>
         </nav>
     </footer>
