@@ -4,12 +4,9 @@
 /* mise en page */
 
 body {
-    justify-content: center;
-    align-items: center;
+    font-family: Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 1.3rem;
-    font-family: Verdana;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -17,29 +14,25 @@ body {
 header {
     background: #dbdbdb;
     color: #fff;
-    padding: 10px 20px;
+    padding: 3px;
     text-align: center;
     font-size: 1.2rem;
-    border: solid 2px black;
-    border-radius: 10px;
+    padding: 10px;
 }
 
 /* pied de page */
 
 footer {
     background: #dbdbdb;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    border: solid 2px black;
-    border-radius: 10px;
+    padding: 10px;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+    font-weight: bold;
 }
 
 h2 {
@@ -48,8 +41,8 @@ h2 {
 }
 
 p {
-    font-size : 1.25rem;
-    margin: 1em;
+    font-size: 1.1rem;
+    text-align: justify;
 }
 
 /* personnalisation des cartes affichées */
@@ -145,4 +138,12 @@ ul {
     margin: 0;
     color: black;
     text-decoration: none;
+}
+
+.welcome {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.8;
 }

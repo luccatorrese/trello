@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <title>Trello, le gestionnaire de projet</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- insertion des méta-données relatives à la page. -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Lucca Torrese">
+    <meta name="keywords" content="trello,travail,devoirs,work,javascript">
+    <meta name="description" content="Retrouve tous les devoirs à effectuer dans une seule page.">
+    <link rel="icon" href="images/clipboard_120835.png" alt="Icône" />
+
+    <!--LINK JQUERY-->
+    <script type="text/javascript" src=".js"></script>
+    <!--PERSONAL SCRIPT JavaScript-->
+    <script type="text/javascript">
+        $(function () {
+            alert("My First jQuery Test");
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Présentation du site -->
+
+    <header>
+        <img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;" />
+        <nav>
+            <ul>
+                <li>Accueil</li>
+                <li><a href="homework.php">Travail à faire</a></li>
+                <li><a href="workdone.php">Devoirs terminés</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="welcome">
+        <h1>Bienvenue !</h1>
+        <p>
+            Je te souhaite la bienvenue sur mon tableau Trello ! Cette page Web de type interactive sert à
+            organiser ses devoirs, et s'inspire directement du site
+            <a href="https://www.trello.com">Trello</a>, qui permet de gérer des projets, à l'école ou en
+            entreprise. L'ensemble des données de cette page Web sont traitées dans la base
+            de données phpMyAdmin, appelée "db_trello".
+        </p>
+        <p>
+            Pour accéder directement à tes devoirs à faire, clique sur ce <a href="homework.php">livre !</a>
+        </p>
+        <!-- Encapsulation de l'image dans un lien -->
+        <a href="homework.php">
+            <img src="images/homework.jpg" alt="Illustration devoirs" style="max-width: 20vw; display: block; margin: 0 auto;" />
+        </a>
+
+    </div>
+
+    <!-- pied de page -->
+    <footer>
+        <nav>
+            <ul>
+                <li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;" /></li>
+                <li> © 2025 Université de Corse. Tous droits réservés. </li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
