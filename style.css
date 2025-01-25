@@ -1,7 +1,3 @@
-                                                                       
-                                                                            /* CSS Tableau Trello */
-
-/* mise en page */
 
 body {
     font-family: Verdana, sans-serif;
@@ -20,8 +16,6 @@ header {
     padding: 10px;
 }
 
-/* pied de page */
-
 footer {
     background: #dbdbdb;
     color: #fff;
@@ -35,36 +29,50 @@ h1 {
     font-weight: bold;
 }
 
-h2 {
-    font-size: 1rem;
-    text-align: center;
-}
-
 p {
     font-size: 1.1rem;
     text-align: justify;
 }
 
-/* personnalisation des cartes affichées */
+nav {
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    float: inline-start;
+}
+
+.text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.8;
+}
 
 .card {
-    min-width: 300px;
-    max-width: 600px;
     background-color: #323232;
     color: white;
     border-radius: 15px;
-    margin: 15px;
+    margin: 0 auto;
     border: solid 2px #212529;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    line-height: 2rem;
+    text-align: center;
+    max-width: 25vw;
 }
-
-.container {
-    display: flex;
-    padding: 20px;
-}
-
-/* début Cartes */
 
 .card-header {
     height: 25px;
@@ -113,37 +121,26 @@ p {
 .add:hover {
     background-color: darkgrey;
     color: white;
+    content: 'Ajouter un devoir...';
 }
 
-
-/* fin Cartes */
-
-
-nav {
-    height: 100%;
-    vertical-align: middle;
-    width: 100%;
-    color: white;
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    color: black;
-    text-decoration: none;
-}
-
-.welcome {
-    max-width: 800px;
+.homework-text {
+    max-width: 50vw;
     margin: 0 auto;
     padding: 20px;
     text-align: justify;
     line-height: 1.8;
+}
+
+.homework-text button {
+    background-color: #1f883d;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    max-width: 50vw;
+}
+
+.homework-text button:hover {
+    background-color: #155f2a;
+    color: white;
 }

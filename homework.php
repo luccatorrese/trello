@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
+
+    <title>Gestion des devoirs</title>
+	<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Travail à faire</title>
-	<link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
@@ -13,16 +13,8 @@
     <meta name="author" content="Lucca Torrese">
     <meta name="keywords" content="trello,travail,devoirs,work,javascript">
     <meta name="description" content="Retrouve tous les devoirs à effectuer dans une seule page.">
-	<link rel="icon" href="images/clipboard_120835.png" alt="Icône" />
-
-		<!--LINK JQUERY-->
-	<script type="text/javascript" src="jquery-3.3.1.js"></script>
-	<!--PERSONAL SCRIPT JavaScript-->
-	<script type="text/javascript">
-	   $(function(){
-		  alert("My First jQuery Test");
-	   });
-	</script>
+	<link rel="icon" href="images/clipboard_120835.png">
+	<script src="cards.js" defer></script>
 
 </head>
 
@@ -30,21 +22,29 @@
     <!-- Présentation du site -->
 
 	<header>
-            <img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;" />
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</li>
-                    <li>Travail à faire</a></li>
-                    <li><a href="workdone.php">Devoirs terminés</a></li>
-                </ul>
-            </nav>
-        </header>
+		<img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;">
+        <nav>
+			<ul>
+				<li><a href="index.html">Accueil</a></li>
+                <li><a href="homework.php">Gestion des devoirs</a></li>
+                <li><a href="workdone.php">Devoirs terminés</a></li>
+                <li><a href="about.html">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Travail à faire</h2>
-	<p><b>Note :</b> ce tableau Trello se base sur les cartes qui ont été créées dans la table "groupes"
-	de la base de données "db_trello". Plus l'utilisateur ajoute de cartes via phpMyAdmin, plus le site
-	contiendra de cartes.</p>
-	<p>Les données s'affichent dans le rectangle blanc ci-dessous, et sont contenues dans la table "taches".</p>
+	<div class="homework-text">
+		<h1>Gestion des devoirs</h1>
+		<dialog>
+			<p>Ceci est une pop-up. Cliquez sur OK pour me supprimer.</p>
+			<form method="dialog">
+			<button>OK</button>
+			</form>
+		</dialog>
+		<button id="add-work">Ajouter un devoir</button>
+		<button id="change-work">Modifier un devoir</button>
+		<button id="change-work">Supprimer un devoir</button>
+	</div>
 
     <?php
 		// Connexion à la base de données (à remplacer par vos propres informations de connexion)
@@ -57,9 +57,8 @@
 
 		// Vérification de la connexion
 		if ($conn->connect_error) {
-			die("Connexion échouée: " . $conn->connect_error);
+			die("La connexion a échouée : " . $conn->connect_error . ". Vérifiez que la base de données est bien existante.");
 		}
-
 
 		// Requête SQL pour sélectionner toutes les données de la table "groupe"
 		$sql = "SELECT * FROM groupes";
@@ -92,7 +91,7 @@
 				// Résultat de la requête
 				$resulttemp = $stmt->get_result();
 
-				// Vérifier s'il y a des résultats
+				// Vérification des résultats
 				if ($resulttemp->num_rows > 0) 
 				{
 					// Parcourir chaque ligne de résultat
@@ -108,46 +107,15 @@
 				</div>';
 			}
 		}
-// Fermer la connexion à la base de données
-$conn->close();
-?>
-
-	<!-- Boîte de dialogue bonus -->
-
-	<dialog>
-		<p>A suivre...</p>
-		<form method="dialog">
-		<button>OK</button>
-		</form>
-	</dialog>
-	<button>Test Popup</button>
-
-	<!-- script JavaScript permettant de faire fonctionner la boîte de dialogue -->
-
-    <script>
-		/* sélectionneur de requêtes */
-        const popup = document.querySelector("dialog");
-        const showButton = document.querySelector("dialog + button");
-        const closeButton = document.querySelector("dialog button");
-
-        // Le bouton "Test Popup" ouvre la boîte de dialogue. Ajout d'un écouteur d'évènements pour la constante showButton, avec fonction showModal.
-        showButton.addEventListener("click", () => {
-            popup.showModal();
-        });
-
-        // Le bouton "OK" ferme la popup. Ajout d'un écouteur d'évènements pour la constante closeButton, puis fonction close.
-        closeButton.addEventListener("click", () => {
-            popup.close();
-        });
-
-
-    </script>
+		// Fermeture de la connexion à la base de données
+		$conn->close();
+		?>
 
 	<!-- pied de page -->
 	<footer>
         <nav>
             <ul>
-				<li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;" /></li>
+				<li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;"></li>
                 <li>© 2025 Université de Corse. Tous droits réservés.</li>
             </ul>
         </nav>
