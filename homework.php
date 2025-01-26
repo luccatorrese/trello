@@ -13,7 +13,7 @@
     <meta name="author" content="Lucca Torrese">
     <meta name="keywords" content="trello,travail,devoirs,work,javascript">
     <meta name="description" content="Retrouve tous les devoirs à effectuer dans une seule page.">
-	<link rel="icon" href="images/clipboard_120835.png">
+	<link rel="icon" href="images/trello_simple.png">
 	<script src="cards.js" defer></script>
 
 </head>
@@ -26,7 +26,6 @@
 			<ul>
 				<li><a href="index.html">Accueil</a></li>
                 <li><a href="homework.php">Gestion des devoirs</a></li>
-                <li><a href="workdone.php">Devoirs terminés</a></li>
                 <li><a href="about.html">A propos</a></li>
             </ul>
         </nav>
@@ -34,10 +33,12 @@
 
 	<div class="homework-text">
 		<h1>Gestion des devoirs</h1>
+		<p>Sur cette page, tu peux gérer l'ensemble de tes devoirs en temps réel. Choisis ce que tu souhaites
+		effectuer.</p>
 
 		<dialog id="add-work">
 			<p><b>Information</b></p>
-			<p>Veuillez entrer un nom de devoir, une description, et une catégorie de devoir.</p>
+			<p>Veuillez entrer un nom de devoir, ainsi qu'une description, et une catégorie de devoir.</p>
 			<label for="cardTitle">Titre :</label>
 			<input type="text" id="cardTitle" name="cardTitle" required />
 			<label for="cardDescription">Description :</label>
@@ -66,9 +67,12 @@
 			<button id="cancel-delete-button">Non</button>
 		</dialog>
 
-		<button type="button" id="add-button" style="background-color: #48b427;">Ajouter un devoir</button>
-		<button type="button" id="change-button" style="background-color: #b3bc16;">Modifier un devoir</button>
-		<button type="button" id="delete-button" style="background-color: #cd1717;">Supprimer un devoir</button>
+		<button type="button" id="add-button" style="background-color: #48b427;">
+		<img src="images/ajouter.png" style="max-width: 1.5vw; padding: 3px;">Ajouter un devoir</button>
+		<button type="button" id="edit-button" style="background-color: #b3bc16;">
+		<img src="images/editer.png" style="max-width: 1.5vw; padding: 3px;">Modifier un devoir</button>
+		<button type="button" id="delete-button" style="background-color: #cd1717;">
+		<img src="images/supprimer.png" style="max-width: 1.5vw; padding: 3px;">Supprimer un devoir</button>
 	</div>
 
     <?php
@@ -102,7 +106,7 @@
 				<div class="card-content">';
 				
 				// Requête SELECT avec WHERE
-				$query = "SELECT * FROM taches WHERE id_groupe = ?";
+				$query = "SELECT * FROM taches WHERE id_groupe = ?;";
 
 				// Préparation de la requête
 				$stmt = $conn->prepare($query);
@@ -126,7 +130,7 @@
 						echo '<div class="sub-card"><b>'. $rowtemp["titre"] . "<br>" . $rowtemp["description"] . "<br>" . $rowtemp["categorie"]. '</b></div>';
 					}
 				} 
-				echo '<div class="sub-card add">+</div>
+				echo '<div class="sub-card add"><img src="images/ajouter.png" style="max-width: 1.5vw; padding: 3px;"></div>
 
 				</div>
 				</div>';
@@ -134,7 +138,7 @@
 		}
 		// Fermeture de la connexion à la base de données
 		$conn->close();
-		?>
+	?>
 
 	<!-- pied de page -->
     <footer>
