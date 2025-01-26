@@ -31,57 +31,64 @@
         </nav>
     </header>
 
+	<!-- texte Devoirs -->
 	<div class="homework-text">
 		<h1>Gestion des devoirs</h1>
 		<p>Sur cette page, tu peux gérer l'ensemble de tes devoirs en temps réel. Choisis ce que tu souhaites
 		effectuer.</p>
 
+		<!-- 3 popups qui vont être utilisés dans le fichier JS -->
 		<dialog id="add-work">
 			<p><b>Information</b></p>
-			<p>Veuillez entrer un nom de devoir, ainsi qu'une description, et une catégorie de devoir.</p>
+			<p>Entre un nom de devoir, ainsi qu'une description, et une catégorie de devoir.</p>
 			<label for="cardTitle">Titre :</label>
 			<input type="text" id="cardTitle" name="cardTitle" required />
 			<label for="cardDescription">Description :</label>
 			<textarea id="cardDescription" name="cardDescription" required></textarea>
 			<label for="cardCategory">Catégorie :</label>
 			<input type="text" id="cardCategory" name="cardCategory" required />
-			<button type="submit" id="send-button">OK</button>
+			<button type="submit" id="send-button" style="background-color: #48b427;
+			color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1.2rem;
+			height: 50px;">OK</button>
 		</dialog>
 
 		<dialog id="edit-work">
 			<p><b>Information</b></p>
-			<p>Veuillez modifier les informations du devoir sélectionné.</p>
+			<p>Entre les modifications pour le devoir sélectionné.</p>
 			<label for="editTitle">Titre :</label>
 			<input type="text" id="editTitle" name="editTitle" required />
 			<label for="editDescription">Description :</label>
 			<textarea id="editDescription" name="editDescription" required></textarea>
 			<label for="editCategory">Catégorie :</label>
 			<input type="text" id="editCategory" name="editCategory" required />
-			<button type="submit" id="update-button">Mettre à jour</button>
+			<button type="submit" id="update-button" style="background-color: #48b427;
+			color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1.2rem;
+			height: 50px;">Mettre à jour</button>
 		</dialog>
 
 		<dialog id="delete-work">
 			<p><b>Alerte</b></p>
-			<p>Êtes-vous sûr de vouloir supprimer ce devoir ?</p>
-			<button id="confirm-delete-button">Oui</button>
-			<button id="cancel-delete-button">Non</button>
+			<p>Es-tu sûr de vouloir supprimer le devoir ?</p>
+			<button id="confirm-delete-button" style="background-color: #48b427; color: white; border: none;
+			padding: 10px 20px; border-radius: 5px; font-size: 1.2rem; height: 50px;">Oui</button>
+			<button id="cancel-delete-button" style="background-color: #cd1717; color: white; border: none;
+			padding: 10px 20px; border-radius: 5px; font-size: 1.2rem; height: 50px;">Non</button>
 		</dialog>
 
 		<button type="button" id="add-button" style="background-color: #48b427;">
-		<img src="images/ajouter.png" style="max-width: 1.5vw; padding: 3px;">Ajouter un devoir</button>
+		<img src="images/ajouter.png">Ajouter un devoir</button>
 		<button type="button" id="edit-button" style="background-color: #b3bc16;">
-		<img src="images/editer.png" style="max-width: 1.5vw; padding: 3px;">Modifier un devoir</button>
+		<img src="images/editer.png">Modifier un devoir</button>
 		<button type="button" id="delete-button" style="background-color: #cd1717;">
-		<img src="images/supprimer.png" style="max-width: 1.5vw; padding: 3px;">Supprimer un devoir</button>
+		<img src="images/supprimer.png">Supprimer un devoir</button>
 	</div>
 
     <?php
-		// Connexion à la base de données (à remplacer par vos propres informations de connexion)
+		// Connexion à la base de données
 		$host = "localhost";
 		$username = "root";
 		$password = "";
 		$dbname = "db_trello";
-		// Connexion à la base de données
 		$conn = new mysqli($host, $username, $password, $dbname);
 
 		// Vérification de la connexion

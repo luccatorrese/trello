@@ -5,9 +5,6 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 header {
@@ -56,11 +53,6 @@ ul {
 a {
     color: white;
     text-decoration: none;
-}
-
-a:hover {
-    color: lightgray;
-    text-decoration: underline;
 }
 
 .card {
@@ -119,12 +111,6 @@ a:hover {
     align-items: center;
 }
 
-.add:hover {
-    background-color: darkgrey;
-    color: white;
-    content: 'Ajouter un devoir...';
-}
-
 .homework-text {
     margin: 0 auto;
     padding: 20px;
@@ -136,11 +122,12 @@ a:hover {
 #add-button, #edit-button, #delete-button {
     color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     font-size: 1.2rem;
     height: 50px;
-    justify-content: space-around;
+    display: flex;
+    padding: 10px;
+    margin: 0.5em;
 }
 
 #add-button:hover {
@@ -156,4 +143,19 @@ a:hover {
 #delete-button:hover {
     background-color: #a01515;
     font-weight: bold;
+}
+
+a:hover {
+    color: lightgray;
+    text-decoration: underline;
+}
+
+.add:hover {
+    background-color: #f4f4f4;
+    color: white;
+}
+
+.sub-card:hover {
+    background-color: #f4f4f4;
+    color: black;
 }
