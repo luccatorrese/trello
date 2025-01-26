@@ -21,7 +21,6 @@
     <!-- Présentation du site -->
 
 	<header>
-		<img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;">
         <nav>
 			<ul>
 				<li><a href="index.html">Accueil</a></li>
@@ -33,7 +32,7 @@
     </header>
 
 	<div class="workdone">
-		<h1>Gestion des devoirs</h1>
+		<h1>Devoirs terminés</h1>
         <p>Travaux en cours...</p>
         <p>- Insérer les devoirs déjà terminés sur cette page si possible !</p>
 	</div>
@@ -42,8 +41,7 @@
 	<footer>
         <nav>
             <ul>
-				<li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;"></li>
-                <li>© 2025 Université de Corse. Tous droits réservés.</li>
+				<li>© 2025 Université de Corse. Tous droits réservés.</li>
             </ul>
         </nav>
     </footer>

@@ -22,8 +22,7 @@
     <!-- Présentation du site -->
 
 	<header>
-		<img src="images/Logo_Trello.svg" alt="Logo Trello" style="height: auto; width: 10vw;">
-        <nav>
+		<nav>
 			<ul>
 				<li><a href="index.html">Accueil</a></li>
                 <li><a href="homework.php">Gestion des devoirs</a></li>
@@ -35,15 +34,41 @@
 
 	<div class="homework-text">
 		<h1>Gestion des devoirs</h1>
-		<dialog>
-			<p>Ceci est une pop-up. Cliquez sur OK pour me supprimer.</p>
-			<form method="dialog">
-			<button>OK</button>
-			</form>
+
+		<dialog id="add-work">
+			<p><b>Information</b></p>
+			<p>Veuillez entrer un nom de devoir, une description, et une catégorie de devoir.</p>
+			<label for="cardTitle">Titre :</label>
+			<input type="text" id="cardTitle" name="cardTitle" required />
+			<label for="cardDescription">Description :</label>
+			<textarea id="cardDescription" name="cardDescription" required></textarea>
+			<label for="cardCategory">Catégorie :</label>
+			<input type="text" id="cardCategory" name="cardCategory" required />
+			<button type="submit" id="send-button">OK</button>
 		</dialog>
-		<button id="add-work">Ajouter un devoir</button>
-		<button id="change-work">Modifier un devoir</button>
-		<button id="change-work">Supprimer un devoir</button>
+
+		<dialog id="edit-work">
+			<p><b>Information</b></p>
+			<p>Veuillez modifier les informations du devoir sélectionné.</p>
+			<label for="editTitle">Titre :</label>
+			<input type="text" id="editTitle" name="editTitle" required />
+			<label for="editDescription">Description :</label>
+			<textarea id="editDescription" name="editDescription" required></textarea>
+			<label for="editCategory">Catégorie :</label>
+			<input type="text" id="editCategory" name="editCategory" required />
+			<button type="submit" id="update-button">Mettre à jour</button>
+		</dialog>
+
+		<dialog id="delete-work">
+			<p><b>Alerte</b></p>
+			<p>Êtes-vous sûr de vouloir supprimer ce devoir ?</p>
+			<button id="confirm-delete-button">Oui</button>
+			<button id="cancel-delete-button">Non</button>
+		</dialog>
+
+		<button type="button" id="add-button" style="background-color: #48b427;">Ajouter un devoir</button>
+		<button type="button" id="change-button" style="background-color: #b3bc16;">Modifier un devoir</button>
+		<button type="button" id="delete-button" style="background-color: #cd1717;">Supprimer un devoir</button>
 	</div>
 
     <?php
@@ -98,7 +123,7 @@
 					while($rowtemp = $resulttemp->fetch_assoc()) // rowtemp[id] = 1 et row[titre] = 
 					{
 						// Afficher la valeur de la variable "titre" pour chaque ligne
-						echo '<div class="sub-card"><b>'. $rowtemp["titre"] . "<br>" . $rowtemp["description"] . "<br>" . $rowtemp["categorie"]. '</div>';
+						echo '<div class="sub-card"><b>'. $rowtemp["titre"] . "<br>" . $rowtemp["description"] . "<br>" . $rowtemp["categorie"]. '</b></div>';
 					}
 				} 
 				echo '<div class="sub-card add">+</div>
@@ -112,11 +137,10 @@
 		?>
 
 	<!-- pied de page -->
-	<footer>
+    <footer>
         <nav>
             <ul>
-				<li><img src="images/trello_simple.png" alt="Logo Trello sans lettres" style="height: auto; width: 3vw;"></li>
-                <li>© 2025 Université de Corse. Tous droits réservés.</li>
+                <li> © 2025 Université de Corse. Tous droits réservés. </li>
             </ul>
         </nav>
     </footer>

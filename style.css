@@ -5,22 +5,27 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 header {
-    background: #dbdbdb;
+    background: #222222;
     color: #fff;
-    padding: 3px;
     text-align: center;
     font-size: 1.2rem;
     padding: 10px;
+    height: 44px;
 }
 
 footer {
-    background: #dbdbdb;
+    background: #222222;
     color: #fff;
     text-align: center;
+    font-size: 1.1rem;
     padding: 10px;
+    height: 22px;
 }
 
 h1 {
@@ -30,16 +35,12 @@ h1 {
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: justify;
-}
-
-nav {
-    height: 100%;
-    vertical-align: middle;
-    width: 100%;
-    color: white;
-    text-decoration: none;
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.8;
 }
 
 ul {
@@ -49,17 +50,17 @@ ul {
     align-items: center;
     padding: 0;
     margin: 0;
-    color: black;
-    text-decoration: none;
-    float: inline-start;
+    color: white;
 }
 
-.text {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: justify;
-    line-height: 1.8;
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightgray;
+    text-decoration: underline;
 }
 
 .card {
@@ -129,18 +130,29 @@ ul {
     margin: 0 auto;
     padding: 20px;
     text-align: justify;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
-.homework-text button {
-    background-color: #1f883d;
+#add-button, #change-button, #delete-button {
     color: white;
-    padding: 15px 32px;
-    font-size: 16px;
-    max-width: 50vw;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    height: 50px;
 }
 
-.homework-text button:hover {
-    background-color: #155f2a;
-    color: white;
+#add-button:hover {
+    background-color: #3e9723;
+    font-weight: bold;
+}
+
+#change-button:hover {
+    background-color: #9fa812;
+    font-weight: bold;
+}
+
+#delete-button:hover {
+    background-color: #a01515;
+    font-weight: bold;
 }
